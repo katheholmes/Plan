@@ -51,7 +51,7 @@ public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFac
    @Override
    public boolean verificarTipo(Usuario usuario){
        boolean bandera;
-       if(usuario.isTipo()){
+       if(!usuario.isTipo()){
            return true;
        }
        return false;

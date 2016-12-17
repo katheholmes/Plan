@@ -29,5 +29,6 @@ public interface VehiculoFacadeLocal {
     List<Vehiculo> findRange(int[] range);
 
     int count();
+    List<Vehiculo> consultarPrecio(double precio);
     
 }

@@ -17,6 +17,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.faces.event.AjaxBehaviorEvent;
 
 /**
  *
@@ -29,6 +30,7 @@ public class VehiculoController implements Serializable {
     @EJB
     private VehiculoFacadeLocal vehiculoLocal;
     private Vehiculo vehiculo;
+    private List<Vehiculo> vehiculos;
     @EJB
     private ConcesionarioFacadeLocal concesionarioLocal;
     private Concesionario concesionario;
@@ -42,6 +44,15 @@ public class VehiculoController implements Serializable {
     }
     public VehiculoController() {
     }
+
+    public List<Vehiculo> getVehiculos() {
+        return vehiculos;
+    }
+
+    public void setVehiculos(List<Vehiculo> vehiculos) {
+        this.vehiculos = vehiculos;
+    }
+    
     
     public Concesionario getConcesionario() {
         return concesionario;
@@ -83,7 +94,16 @@ public class VehiculoController implements Serializable {
          return redireccion;
   
     }
-
+ 
+    public List<Vehiculo> mostrarListaPorPrecio(){
+       
+           if(vehiculos==null){
+              this.vehiculos = vehiculoLocal.consultarPrecio(vehiculo.getPrecio());
+           }
+           return vehiculos;
+    }
    
-    
+    public void listarPorPrecio(AjaxBehaviorEvent event)  throws Exception{
+    vehiculos=vehiculoLocal.consultarPrecio(vehiculo.getPrecio());
+    }
 }

@@ -43,8 +43,8 @@ public class consultaController implements Serializable {
                 vehiculoBarato = vehiculos.get(i);
             }
         }
-        return "Marca: " + vehiculoBarato.getMarca()
-                + "Precio: " + vehiculoBarato.getPrecio();
+        return "\nMarca:" + vehiculoBarato.getMarca()
+                + "\n\nPrecio: " + vehiculoBarato.getPrecio();
     }
     
     public String verModeloMasReciente() {
@@ -56,7 +56,7 @@ public class consultaController implements Serializable {
 
             }
         }
-        return "Marca: " + vehiculo.getMarca()
-                + "Modelo: " + vehiculo.getModelo();
+        return "\nMarca: " + vehiculo.getMarca()
+                + "\nModelo: " + vehiculo.getModelo();
     }
 }
