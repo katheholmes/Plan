@@ -7,7 +7,7 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h:link value="concesionario" outcome="registrarVehiculo" rendered="#{usuarioController.verificarTipo() eq false}"/>
+        <h:link value="Registrar Vehiculo" outcome="registrarVehiculo" rendered="#{usuarioController.verificarTipo() eq true}"/>
         <h:dataTable var="pp" value="#{vehiculoController.listarVehiculos()}"
                      border="1" cellpadding="5" cellspacing="3">
             <h:column>

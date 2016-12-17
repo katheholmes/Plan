@@ -22,11 +22,11 @@
                 <h:outputLabel value="Precio" for="precio"/>
                 <h:inputText id="precio" value="#{vehiculoController.vehiculo.precio}"/>
                 
-                <h:outputLabel value="Concesionario" for="concesionario"/>
-                <h:selectOneMenu id="concesionario" value="#{vehiculoController.vehiculo.codigoConcesionario}"
-                                 converter="ConcesionarioConverter">
+                <h:outputLabel value="Concesionario " for="concesionario"/>
+                <h:selectOneMenu id="concesionario" value="#{vehiculoController.concesionario}"
+                                 converter="concesionarioConverter">
                     <f:selectItems value="#{vehiculoController.concesionarios}" var="concesionario"
-                                   itemLabel="#{concesionario.codigo}" itemValue="#{concesionario}"/>
+                                   itemLabel="#{concesionario.nombre}" itemValue="#{concesionario}"/>
                 </h:selectOneMenu>
                
                 <h:commandButton value="Registrar" action="#{vehiculoController.create()}"/>

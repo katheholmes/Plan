@@ -16,7 +16,7 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
 
-@FacesConverter(value="ConcesionarioConverter")
+@FacesConverter(value="concesionarioConverter")
 @ViewScoped
 public class ConcesionarioConverter implements Converter {
     @EJB

@@ -36,8 +36,9 @@ public class VehiculoController implements Serializable {
     
     @PostConstruct
     public void init(){
+        concesionario = new Concesionario();
         vehiculo= new Vehiculo();
-         concesionarios= concesionarioLocal.findAll();
+        concesionarios= concesionarioLocal.findAll();
     }
     public VehiculoController() {
     }
